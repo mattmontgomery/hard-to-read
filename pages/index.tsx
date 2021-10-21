@@ -18,6 +18,7 @@ function getStyle(
     transform: `rotate(${nextRotation}deg)`,
     marginTop: Math.abs(nextRotation),
     marginRight: ".5rem",
+    letterSpacing: `${nextRotation * 0.02}em`,
   };
 }
 
@@ -59,6 +60,7 @@ const Home: NextPage = () => {
     setText(
       WizardOfOzText.split(/\n{2,}/)
         .filter(Boolean)
+        .slice(0, 500)
         .map((p: string) => <Line>{p}</Line>)
     );
   }, [WizardOfOzText]);

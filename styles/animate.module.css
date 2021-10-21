@@ -1,0 +1,58 @@
+.animate1 {
+  animation-duration: 0.1s;
+  animation-name: colorThrob;
+  animation-iteration-count: infinite;
+}
+.animate2 {
+  animation-duration: 0.2s;
+  animation-name: colorThrob;
+  animation-iteration-count: infinite;
+}
+.animate3 {
+  animation-duration: 0.3s;
+  animation-name: colorThrob;
+  animation-iteration-count: infinite;
+}
+.animate4 {
+  animation-duration: 0.4s;
+  animation-name: colorThrob;
+  animation-iteration-count: infinite;
+}
+.animate5 {
+  animation-duration: 0.5s;
+  animation-name: colorThrob;
+  animation-iteration-count: infinite;
+}
+.animate6 {
+  animation-duration: 0.6s;
+  animation-name: colorThrob;
+  animation-iteration-count: infinite;
+}
+.animate7 {
+  animation-duration: 0.7s;
+  animation-name: colorThrob;
+  animation-iteration-count: infinite;
+}
+.animate8 {
+  animation-duration: 0.8s;
+  animation-name: colorThrob;
+  animation-iteration-count: infinite;
+}
+.animate9 {
+  animation-duration: 0.9s;
+  animation-name: colorThrob;
+  animation-iteration-count: infinite;
+}
+.animate10 {
+  animation-duration: 1s;
+  animation-name: colorThrob;
+  animation-iteration-count: infinite;
+}
+@keyframes colorThrob {
+  from {
+    color: black;
+  }
+  to {
+    color: #444;
+  }
+}

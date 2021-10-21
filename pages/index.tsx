@@ -5,7 +5,8 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/animate.module.css";
 
 function getStyle(
-  lastStyle: React.StyleHTMLAttributes<HTMLSpanElement>["style"]
+  lastStyle: React.StyleHTMLAttributes<HTMLSpanElement>["style"],
+  word: string
 ): React.StyleHTMLAttributes<HTMLSpanElement>["style"] {
   const lastRotation = Number(
     lastStyle?.transform?.replace(/[(rotate)|\(|\)|(deg)]+/g, "")
@@ -19,6 +20,8 @@ function getStyle(
     marginTop: Math.abs(nextRotation),
     marginRight: ".5rem",
     letterSpacing: `${nextRotation * 0.02}em`,
+    position: "relative",
+    top: nextRotation > 0 ? `${nextRotation * 5}px` : 0,
   };
 }
 
@@ -36,11 +39,18 @@ const Line = ({
       : []
   );
   let lastStyle: React.StyleHTMLAttributes<HTMLSpanElement>["style"];
+  let lastW: string;
   return (
-    <p>
+    <p
+      style={{
+        lineHeight: Math.random() > 0.5 ? "150%" : "75%",
+        marginBottom: "2rem",
+      }}
+    >
       {words.map((w) => {
-        const thisStyle = getStyle(lastStyle);
+        const thisStyle = getStyle(lastStyle, lastW);
         lastStyle = thisStyle;
+        lastW = w;
         return (
           <span
             style={thisStyle}
@@ -60,7 +70,7 @@ const Home: NextPage = () => {
     setText(
       WizardOfOzText.split(/\n{2,}/)
         .filter(Boolean)
-        .slice(0, 500)
+        .slice(0, 100)
         .map((p: string) => <Line>{p}</Line>)
     );
   }, [WizardOfOzText]);
